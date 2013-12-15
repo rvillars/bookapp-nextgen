@@ -1,0 +1,1 @@
+include ':ch.bfh.swos.bookapp.domain', ':ch.bfh.swos.bookapp.service', ':ch.bfh.swos.bookapp.rest'

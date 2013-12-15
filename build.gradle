@@ -1,0 +1,11 @@
+group = 'ch.bfh.swos.bookapp'
+version = '0.0.1'
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    sourceCompatibility = 1.7
+    repositories {
+        mavenCentral()
+    }
+}
