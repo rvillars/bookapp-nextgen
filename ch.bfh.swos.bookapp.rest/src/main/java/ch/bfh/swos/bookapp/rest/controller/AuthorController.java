@@ -3,13 +3,12 @@ package ch.bfh.swos.bookapp.rest.controller;
 import ch.bfh.swos.bookapp.service.AuthorService;
 import ch.bfh.swos.bookapp.service.dto.AuthorDTO;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
 import java.util.Collection;
 
-@Controller
+@RestController
 @RequestMapping("/authors")
 public class AuthorController {
 
@@ -20,7 +19,6 @@ public class AuthorController {
      * Create
      */
     @RequestMapping(method = RequestMethod.POST)
-    @ResponseBody
     public AuthorDTO create(@RequestBody AuthorDTO author) {
         AuthorDTO createdAuthor = authorService.create(author);
         System.out.println("Author created with id = " + createdAuthor.getId());
@@ -41,7 +39,6 @@ public class AuthorController {
      * Read
      */
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
-    @ResponseBody
     public AuthorDTO read(@PathVariable long id) {
         System.out.println("Author requested with id = " + id);
         return authorService.read(id);
@@ -51,7 +48,6 @@ public class AuthorController {
      * Update
      */
     @RequestMapping(value = "{id}", method = RequestMethod.PUT)
-    @ResponseBody
     public AuthorDTO update(@RequestBody AuthorDTO author, @PathVariable long id) {
         AuthorDTO updatedAuthor = authorService.update(author);
         System.out.println("Author updated with id = " + updatedAuthor.getId());
