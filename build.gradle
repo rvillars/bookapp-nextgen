@@ -9,3 +9,31 @@ subprojects {
         mavenCentral()
     }
 }
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'org.cloudfoundry', name: 'cf-gradle-plugin', version: '1.0.1'
+    }
+}
+
+apply plugin: 'cloudfoundry'
+
+cloudfoundry {
+    username = 'roger.villars@bluewin.ch'
+    application = 'bookapp-nextgen'
+    file = new File('ch.bfh.swos.bookapp.rest/build/libs/ch.bfh.swos.bookapp.rest.war')
+    uri = 'http://bookapp-nextgen.cfapps.io'
+    space = 'development'
+    serviceInfos {
+        'bookapp-db' {
+            label = 'cleardb'
+            provider = 'cleardb'
+            version = 'n/a'
+            plan = 'spark'
+            bind = true
+        }
+    }
+}
