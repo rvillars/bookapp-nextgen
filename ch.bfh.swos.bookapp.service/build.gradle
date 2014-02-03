@@ -1,8 +1,8 @@
 dependencies {
     compile project(':ch.bfh.swos.bookapp.domain')
-    compile "org.springframework:spring-orm:4.0.0.RELEASE"
+    compile "org.springframework:spring-orm:4.0.1.RELEASE"
     compile "javax.inject:javax.inject:1"
     compile "org.modelmapper:modelmapper:0.6.1"
     testCompile "junit:junit:4.11"
-    testCompile "org.springframework:spring-test:4.0.0.RELEASE"
+    testCompile "org.springframework:spring-test:4.0.1.RELEASE"
 }

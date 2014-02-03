@@ -5,11 +5,12 @@ dependencies {
     compile('org.springframework.data:spring-data-jpa:1.4.3.RELEASE') {
         exclude group: 'org.springframework'
     }
-    compile('org.springframework:spring-context:4.0.0.RELEASE')
-    compile('org.springframework:spring-orm:4.0.0.RELEASE')
+    compile('org.springframework:spring-context:4.0.1.RELEASE')
+    compile('org.springframework:spring-orm:4.0.1.RELEASE')
     compile('javax.inject:javax.inject:1')
+    compile('org.codehaus.groovy:groovy-all:2.1.9')
     testCompile('junit:junit:4.11')
-    testCompile('org.springframework:spring-test:4.0.0.RELEASE')
+    testCompile('org.springframework:spring-test:4.0.1.RELEASE')
 }
 
 repositories {

@@ -27,13 +27,13 @@
     <orderEntry type="library" exported="" name="Gradle: jackson-core-asl-1.9.13" level="project" />
     <orderEntry type="library" exported="" name="Gradle: aopalliance-1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: javax.servlet-api-3.1.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-webmvc-4.0.0.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-context-4.0.0.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-core-4.0.0.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-aop-4.0.0.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-web-4.0.0.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-expression-4.0.0.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-beans-4.0.0.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-webmvc-4.0.1.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-core-4.0.1.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-beans-4.0.1.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-expression-4.0.1.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-aop-4.0.1.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-context-4.0.1.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-web-4.0.1.RELEASE" level="project" />
   </component>
 </module>
 
