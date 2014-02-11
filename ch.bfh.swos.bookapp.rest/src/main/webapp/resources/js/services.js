@@ -1,14 +1,14 @@
 'use strict';
 
-var services = angular.module('services', ['ngResource']);
+var bookapp = angular.module('bookapp');
 
-services.factory('Book', ['$resource', function ($resource) {
+bookapp.factory('Book', ['$resource', function ($resource) {
     return $resource('rest/books/:bookId', {bookId: '@id'}, {
         'update': {method: 'PUT'}
     });
 }]);
 
-services.factory('Author', ['$resource', function ($resource) {
+bookapp.factory('Author', ['$resource', function ($resource) {
     return $resource('rest/authors/:authorId', {authorId: '@id'}, {
         'update': {method: 'PUT'}
     });

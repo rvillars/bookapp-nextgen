@@ -1,8 +1,8 @@
 'use strict';
 
-var controllers = angular.module('controllers', ['services']);
+var bookapp = angular.module('bookapp');
 
-controllers.controller('BookController', ['$scope', 'Book', 'Author', function ($scope, Book, Author) {
+bookapp.controller('BookController', ['$scope', 'Book', 'Author', function ($scope, Book, Author) {
 
     $scope.currentBook = new Book();
     $scope.currentBook.releaseDate = new Date();
@@ -37,7 +37,7 @@ controllers.controller('BookController', ['$scope', 'Book', 'Author', function (
     };
 }]);
 
-controllers.controller('AuthorController', ['$scope', 'Author', function ($scope, Author) {
+bookapp.controller('AuthorController', ['$scope', 'Author', function ($scope, Author) {
     $scope.currentAuthor = new Author();
     $scope.authors = Author.query();
     $scope.showId = false;
@@ -67,7 +67,7 @@ controllers.controller('AuthorController', ['$scope', 'Author', function ($scope
     };
 }]);
 
-controllers.controller('NavController', ['$scope', '$rootScope', '$route', function ($scope, $rootScope, $route) {
+bookapp.controller('NavController', ['$scope', '$rootScope', '$route', function ($scope, $rootScope, $route) {
     $rootScope.route = $route;
 }]);
 
