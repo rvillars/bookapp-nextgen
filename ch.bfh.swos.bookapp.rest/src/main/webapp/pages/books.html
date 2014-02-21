@@ -2,22 +2,30 @@
     <form id="form" name="form">
         <fieldset>
             <legend>Current Book</legend>
-            <label for="title">Title</label>
-            <input id="title" required type="text" ng-model="currentBook.title" placeholder="Enter a book title..." class="span5"/>
-            <label for="releaseDate">Release date</label>
-            <input id="releaseDate" type="text" ng-model="currentBook.releaseDate" datepicker-popup="dd.MM.yyyy"/>
-            <label for="author">Author</label>
-            <select id="author" required ng-model="currentBook.author" ng-options="author as (author.firstname + ' ' + author.lastname) for author in authors">
-                <option value="">-- choose author --</option>
-            </select>
-            <label for="id" ng-show="showId">Id</label>
-            <input id="id" type="text" disabled="disabled" ng-model="currentBook.id" ng-show="showId" class="span1"/>
-
-            <div class="form-actions">
-                <button id="save" ng-click="save()" ng-disabled="form.$invalid" class="btn btn-primary">Save Book</button>
-                <button id="cancel" ng-click="cancel()" class="btn">Cancel</button>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input id="title" required type="text" ng-model="currentBook.title" placeholder="Enter a book title..." class="form-control"
+                       style="width: 380px;"/>
+            </div>
+            <div class=" form-group">
+                <label for="releaseDate">Release date</label>
+                <input id="releaseDate" type="text" ng-model="currentBook.releaseDate" datepicker-popup="dd.MM.yyyy"
+                       class="form-control" style="width: 220px;"/>
+            </div>
+            <div class=" form-group">
+                <label for="author">Author</label>
+                <select id="author" required ng-model="currentBook.author"
+                        ng-options="author as (author.firstname + ' ' + author.lastname) for author in authors" class="form-control" style="width: 220px;">
+                    <option value="">-- choose author --</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="id" ng-show="showId">Id</label>
+                <input id="id" type="text" disabled="disabled" ng-model="currentBook.id" ng-show="showId" class="form-control" style="width: 60px;"/>
             </div>
         </fieldset>
+        <button id="save" ng-click="save()" ng-disabled="form.$invalid" class="btn btn-primary">Save Book</button>
+        <button id="cancel" ng-click="cancel()" class="btn">Cancel</button>
     </form>
 
     <form id="list">
@@ -33,7 +41,7 @@
                     <th>Release Date</th>
                     <th>Author</th>
                     <th ng-show="showId">Id</th>
-                    <th>Actions</th>
+                    <th colspan="2">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -43,10 +51,10 @@
                     <td>{{book.author.firstname }} {{book.author.lastname}}</td>
                     <td ng-show="showId">{{book.id}}</td>
                     <td>
-                        <button id="edit" ng-click="edit(book)" class="btn btn-mini">Edit</button>
+                        <button id="edit" ng-click="edit(book)" class="btn btn-xs">Edit</button>
                     </td>
                     <td>
-                        <button id="delete" ng-click="remove($index, book.id)" class="btn btn-mini">Delete</button>
+                        <button id="delete" ng-click="remove($index, book.id)" class="btn btn-xs">Delete</button>
                     </td>
                 </tr>
                 </tbody>

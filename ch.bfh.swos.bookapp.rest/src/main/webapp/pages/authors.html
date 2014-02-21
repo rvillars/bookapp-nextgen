@@ -2,18 +2,23 @@
     <form id="form" name="form">
         <fieldset>
             <legend>Current Author</legend>
-            <label for="firstname">Firstname</label>
-            <input id="firstname" required type="text" ng-model="currentAuthor.firstname" placeholder="Enter an author firstname..." class="span5"/>
-            <label for="lastname">Lastname</label>
-            <input id="lastname" required type="text" ng-model="currentAuthor.lastname" placeholder="Enter an author lastname..." class="span5"/>
-            <label for="id" ng-show="showId">Id</label>
-            <input id="id" type="text" disabled="disabled" ng-model="currentAuthor.id" ng-show="showId" class="span1"/>
-
-            <div class="form-actions">
-                <button id="save" ng-click="save()" ng-disabled="form.$invalid" class="btn btn-primary">Save Author</button>
-                <button id="cancel" ng-click="cancel()" class="btn">Cancel</button>
+            <div class="form-group">
+                <label for="firstname">Firstname</label>
+                <input id="firstname" required type="text" ng-model="currentAuthor.firstname" placeholder="Enter an author firstname..." class="form-control"
+                       style="width: 380px"/>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Lastname</label>
+                <input id="lastname" required type="text" ng-model="currentAuthor.lastname" placeholder="Enter an author lastname..." class="form-control"
+                       style="width: 380px"/>
+            </div>
+            <div class="form-group">
+                <label for="id" ng-show="showId">Id</label>
+                <input id="id" type="text" disabled="disabled" ng-model="currentAuthor.id" ng-show="showId" class="form-control" style="width: 60px"/>
             </div>
         </fieldset>
+        <button id="save" ng-click="save()" ng-disabled="form.$invalid" class="btn btn-primary">Save Author</button>
+        <button id="cancel" ng-click="cancel()" class="btn">Cancel</button>
     </form>
 
     <form id="list">
@@ -28,7 +33,7 @@
                     <th>Firstname</th>
                     <th>Lastname</th>
                     <th ng-show="showId">Id</th>
-                    <th>Actions</th>
+                    <th colspan="2">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -37,10 +42,10 @@
                     <td>{{author.lastname}}</td>
                     <td ng-show="showId">{{author.id}}</td>
                     <td>
-                        <button id="edit" ng-click="edit(author)" class="btn btn-mini">Edit</button>
+                        <button id="edit" ng-click="edit(author)" class="btn btn-xs">Edit</button>
                     </td>
                     <td>
-                        <button id="delete" ng-click="remove($index, author.id)" class="btn btn-mini">Delete</button>
+                        <button id="delete" ng-click="remove($index, author.id)" class="btn btn-xs">Delete</button>
                     </td>
                 </tr>
                 </tbody>
