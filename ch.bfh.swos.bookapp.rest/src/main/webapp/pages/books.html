@@ -2,26 +2,26 @@
     <form id="form" name="form">
         <fieldset>
             <legend>Current Book</legend>
-            <div class="form-group">
-                <label for="title">Title</label>
-                <input id="title" required type="text" ng-model="currentBook.title" placeholder="Enter a book title..." class="form-control"
-                       style="width: 380px;"/>
-            </div>
-            <div class=" form-group">
-                <label for="releaseDate">Release date</label>
-                <input id="releaseDate" type="text" ng-model="currentBook.releaseDate" datepicker-popup="dd.MM.yyyy"
-                       class="form-control" style="width: 220px;"/>
-            </div>
-            <div class=" form-group">
-                <label for="author">Author</label>
-                <select id="author" required ng-model="currentBook.author"
-                        ng-options="author as (author.firstname + ' ' + author.lastname) for author in authors" class="form-control" style="width: 220px;">
-                    <option value="">-- choose author --</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="id" ng-show="showId">Id</label>
-                <input id="id" type="text" disabled="disabled" ng-model="currentBook.id" ng-show="showId" class="form-control" style="width: 60px;"/>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="title">Title</label>
+                    <input id="title" required type="text" ng-model="currentBook.title" placeholder="Enter a book title..." class="form-control"/>
+                </div>
+                <div class=" form-group col-md-6">
+                    <label for="releaseDate">Release date</label>
+                    <input id="releaseDate" type="text" ng-model="currentBook.releaseDate" datepicker-popup="dd.MM.yyyy" class="form-control"/>
+                </div>
+                <div class=" form-group col-md-6">
+                    <label for="author">Author</label>
+                    <select id="author" required ng-model="currentBook.author"
+                            ng-options="author as (author.firstname + ' ' + author.lastname) for author in authors" class="form-control">
+                        <option value="">-- choose author --</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="id" ng-show="showId">Id</label>
+                    <input id="id" type="text" disabled="disabled" ng-model="currentBook.id" ng-show="showId" class="form-control"/>
+                </div>
             </div>
         </fieldset>
         <button id="save" ng-click="save()" ng-disabled="form.$invalid" class="btn btn-primary">Save Book</button>

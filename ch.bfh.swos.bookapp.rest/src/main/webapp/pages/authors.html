@@ -2,19 +2,20 @@
     <form id="form" name="form">
         <fieldset>
             <legend>Current Author</legend>
-            <div class="form-group">
-                <label for="firstname">Firstname</label>
-                <input id="firstname" required type="text" ng-model="currentAuthor.firstname" placeholder="Enter an author firstname..." class="form-control"
-                       style="width: 380px"/>
-            </div>
-            <div class="form-group">
-                <label for="lastname">Lastname</label>
-                <input id="lastname" required type="text" ng-model="currentAuthor.lastname" placeholder="Enter an author lastname..." class="form-control"
-                       style="width: 380px"/>
-            </div>
-            <div class="form-group">
-                <label for="id" ng-show="showId">Id</label>
-                <input id="id" type="text" disabled="disabled" ng-model="currentAuthor.id" ng-show="showId" class="form-control" style="width: 60px"/>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="firstname">Firstname</label>
+                    <input id="firstname" required type="text" ng-model="currentAuthor.firstname" placeholder="Enter an author firstname..."
+                           class="form-control"/>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastname">Lastname</label>
+                    <input id="lastname" required type="text" ng-model="currentAuthor.lastname" placeholder="Enter an author lastname..." class="form-control"/>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="id" ng-show="showId">Id</label>
+                    <input id="id" type="text" disabled="disabled" ng-model="currentAuthor.id" ng-show="showId" class="form-control"/>
+                </div>
             </div>
         </fieldset>
         <button id="save" ng-click="save()" ng-disabled="form.$invalid" class="btn btn-primary">Save Author</button>
