@@ -15,24 +15,24 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath group: 'org.cloudfoundry', name: 'cf-gradle-plugin', version: '1.0.1'
+        classpath group: 'org.cloudfoundry', name: 'cf-gradle-plugin', version: '1.0.2'
     }
 }
 
 apply plugin: 'cloudfoundry'
 
 cloudfoundry {
-    username = 'roger.villars@bluewin.ch'
+    target = 'https://api.cf-mimacom.local'
+    trustSelfSignedCerts = true
+    username = 'roger.villars@mimacom.com'
     application = 'bookapp-nextgen'
     file = new File('ch.bfh.swos.bookapp.rest/build/libs/ch.bfh.swos.bookapp.rest.war')
-    uri = 'http://bookapp-nextgen.cfapps.io'
+    uri = 'http://bookapp-nextgen.apps-mimacom.local'
     space = 'development'
-    serviceInfos {
+    services {
         'bookapp-db' {
-            label = 'cleardb'
-            provider = 'cleardb'
-            version = 'n/a'
-            plan = 'spark'
+            label = 'p-mysql'
+            plan = '100mb'
             bind = true
         }
     }
