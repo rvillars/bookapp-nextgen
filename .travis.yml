@@ -2,4 +2,6 @@ env:
   global:
     secure: bqX0mbCsg8aVpwBcKRx12TAX7aW89vyr01Mmwkk1wrJJoOGYzXk8Oo8qFthD6v4SywVfNgZnREnO0GnK9Nr94qi9+bX/ZxdNYhaTQyERkVL6RQIiUWO4UZgk5G3TwQS7Kq3Vbx0Zp3SrucPBH96GgvBp01cFwzX+H6KOPMyW2Xo=
 language: java
+jdk:
+  - oraclejdk8
 script: gradle war cf-push -Pcf.password=$PASSWORD
