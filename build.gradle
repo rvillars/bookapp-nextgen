@@ -4,7 +4,7 @@ version = '0.0.1'
 subprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
-    sourceCompatibility = 1.7
+    sourceCompatibility = 1.8
     repositories {
         mavenCentral()
     }
@@ -22,17 +22,17 @@ buildscript {
 apply plugin: 'cloudfoundry'
 
 cloudfoundry {
-    target = 'https://api.cf-mimacom.local'
-    trustSelfSignedCerts = true
-    username = 'roger.villars@mimacom.com'
+    username = 'roger.villars@bluewin.ch'
     application = 'bookapp-nextgen'
     file = new File('ch.bfh.swos.bookapp.rest/build/libs/ch.bfh.swos.bookapp.rest.war')
-    uri = 'http://bookapp-nextgen.apps-mimacom.local'
+    uri = 'http://bookapp-nextgen.cfapps.io'
     space = 'development'
     services {
         'bookapp-db' {
-            label = 'p-mysql'
-            plan = '100mb'
+            label = 'cleardb'
+            provider = 'cleardb'
+            version = 'n/a'
+            plan = 'spark'
             bind = true
         }
     }

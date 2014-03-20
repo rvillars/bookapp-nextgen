@@ -14,17 +14,16 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ch.bfh.swos.bookapp.domain" exported="" />
     <orderEntry type="library" scope="TEST" name="Gradle: hamcrest-core-1.3" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: commons-logging-1.1.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: modelmapper-0.6.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: javax.inject-1" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: junit-4.11" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-orm-4.0.1.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-core-4.0.1.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-beans-4.0.1.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-tx-4.0.1.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-jdbc-4.0.1.RELEASE" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: spring-test-4.0.1.RELEASE" level="project" />
-    <orderEntry type="library" name="groovy-2.1.9" level="application" />
+    <orderEntry type="library" exported="" name="Gradle: spring-orm-4.0.2.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-logging-1.1.3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-core-4.0.2.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-beans-4.0.2.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-tx-4.0.2.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-jdbc-4.0.2.RELEASE" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: spring-test-4.0.2.RELEASE" level="project" />
   </component>
 </module>
 
