@@ -6,6 +6,7 @@ dependencies {
     compile('org.springframework:spring-context:4.0.2.RELEASE')
     compile('org.springframework:spring-orm:4.0.2.RELEASE')
     compile('javax.inject:javax.inject:1')
+    compile('mysql:mysql-connector-java:5.1.29')
     testCompile('junit:junit:4.11')
     testCompile('org.springframework:spring-test:4.0.2.RELEASE')
 }
