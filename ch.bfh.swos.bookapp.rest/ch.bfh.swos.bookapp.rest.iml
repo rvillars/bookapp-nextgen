@@ -3,6 +3,9 @@
   <component name="FacetManager">
     <facet type="web" name="Web Gradle : ch.bfh.swos.bookapp.rest.war">
       <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="C:\development\projects\bookapp\bookapp-nextgen\ch.bfh.swos.bookapp.rest\src\main\webapp\WEB-INF\web.xml" />
+        </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
         </webroots>

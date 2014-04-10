@@ -32,6 +32,7 @@ cloudfoundry {
     file = new File('ch.bfh.swos.bookapp.rest/build/libs/ch.bfh.swos.bookapp.rest.war')
     uri = 'http://bookapp-nextgen.cfapps.io'
     space = 'development'
+    buildpack = 'https://github.com/soudmaijer/java-buildpack'
     services {
         'bookapp-db' {
             label = 'cleardb'

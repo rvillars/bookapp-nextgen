@@ -1,9 +1,5 @@
 package ch.bfh.swos.bookapp.rest.config;
 
-import ch.bfh.swos.bookapp.service.config.ServiceConfig;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
@@ -13,22 +9,19 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[]{ServiceConfig.class};
+//        return new Class<?>[]{ServiceConfig.class};
+        return new Class<?>[]{}; // empty since pivotalcf does not yet support xml less config (usees web.xml instead)
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class<?>[]{WebAppConfig.class};
+//        return new Class<?>[]{WebConfig.class};
+        return new Class<?>[]{}; // empty since pivotalcf does not yet support xml less config (usees web.xml instead)
     }
 
     @Override
     protected String[] getServletMappings() {
-        return new String[]{"/rest/*"};
-    }
-
-    @Configuration
-    @EnableWebMvc
-    @ComponentScan("ch.bfh.swos.bookapp.rest.controller")
-    public static class WebAppConfig {
+//        return new String[]{"/rest/*"};
+        return new String[]{}; // empty since pivotalcf does not yet support xml less config (usees web.xml instead)
     }
 }
