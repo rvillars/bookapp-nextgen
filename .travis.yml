@@ -4,4 +4,4 @@ env:
 language: java
 jdk:
   - oraclejdk8
-script: gradle war cfPush -Pcf.password=$PASSWORD
+script: gradle war cfPush -PcfPassword=$PASSWORD
