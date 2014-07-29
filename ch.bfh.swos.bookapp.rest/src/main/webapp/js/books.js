@@ -2,7 +2,14 @@
 
 var bookapp = angular.module('bookapp');
 
-bookapp.controller('BookController', ['$scope', 'Book', 'Author', function ($scope, Book, Author) {
+bookapp.config(function config( $stateProvider ) {
+    $stateProvider.state( 'books', {
+        url: '/books',
+        templateUrl: 'pages/books.tpl.html'
+    });
+});
+
+bookapp.controller('BookController', function ($scope, Book, Author) {
 
     $scope.currentBook = new Book();
     $scope.currentBook.releaseDate = new Date();
@@ -35,41 +42,13 @@ bookapp.controller('BookController', ['$scope', 'Book', 'Author', function ($sco
         $scope.books.splice(index, 1);
         Book.remove({bookId: id});
     };
-}]);
+});
 
-bookapp.controller('AuthorController', ['$scope', 'Author', function ($scope, Author) {
-    $scope.currentAuthor = new Author();
-    $scope.authors = Author.query();
-    $scope.showId = false;
-
-    $scope.cancel = function () {
-        $scope.currentAuthor = new Author();
-    };
-
-    $scope.save = function () {
-        var isNew = $scope.currentAuthor.id == null;
-        if (isNew) {
-            $scope.currentAuthor = Author.save($scope.currentAuthor);
-            $scope.authors.push($scope.currentAuthor);
-        } else {
-            $scope.currentAuthor = Author.update($scope.currentAuthor);
-        }
-        $scope.cancel();
-    };
-
-    $scope.edit = function (author) {
-        $scope.currentAuthor = author;
-    };
-
-    $scope.remove = function (index, id) {
-        $scope.authors.splice(index, 1);
-        Author.remove({authorId: id});
-    };
-}]);
-
-bookapp.controller('NavController', ['$scope', '$rootScope', '$route', function ($scope, $rootScope, $route) {
-    $rootScope.route = $route;
-}]);
+bookapp.factory('Book', function ($resource) {
+    return $resource('rest/books/:bookId', {bookId: '@id'}, {
+        'update': {method: 'PUT'}
+    });
+});
 
 function filterById(array, id) {
     return array.filter(function (object) {
