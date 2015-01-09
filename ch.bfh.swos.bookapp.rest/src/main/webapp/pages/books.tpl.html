@@ -9,7 +9,12 @@
                 </div>
                 <div class=" form-group col-md-6">
                     <label for="releaseDate">Release date</label>
-                    <input id="releaseDate" type="text" ng-model="currentBook.releaseDate" datepicker-popup="dd.MM.yyyy" class="form-control"/>
+                    <div class="input-group">
+                        <input id="releaseDate" type="text" ng-model="currentBook.releaseDate" datepicker-popup="dd.MM.yyyy" is-open="opened" class="form-control"/>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="openDatePicker($event)"><i class="glyphicon glyphicon-calendar"></i>&nbsp;</button>
+                        </span>
+                    </div>
                 </div>
                 <div class=" form-group col-md-6">
                     <label for="author">Author</label>
@@ -28,12 +33,14 @@
         <button id="cancel" ng-click="cancel()" class="btn">Cancel</button>
     </form>
 
-    <form id="list">
+    <div id="list">
         <fieldset>
             <legend>Books</legend>
-            <label for="showId" class="checkbox">
-                <input id="showId" type="checkbox" ng-model="showId">Show Id</input>
-            </label>
+            <div class="checkbox">
+                <label for="showId">
+                    <input id="showId" type="checkbox" ng-model="showId">Show Id</input>
+                </label>
+            </div>
             <table id="table" class="table table-striped table-bordered table-condensed">
                 <thead>
                 <tr>
@@ -60,5 +67,5 @@
                 </tbody>
             </table>
         </fieldset>
-    </form>
+    </div>
 </div>
